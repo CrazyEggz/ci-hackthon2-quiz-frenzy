@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Landing Page */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff9ef;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+
+.eye-container {
+    display: flex;
+}
+
+.eye {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #f9cdcc;
+    margin: 0 20px;
+}
+
+.eye::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: black;
+}
