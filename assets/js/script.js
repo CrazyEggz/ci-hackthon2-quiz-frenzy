@@ -14,3 +14,30 @@ function eyeball(event) {
         eye.style.transform = "rotate(" + rotation + "deg)";
     });
 }
+
+/** Question page structure */
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to set a new question
+    function setQuestion(newQuestion) {
+        const questionElement = document.getElementById('question');
+        questionElement.textContent = newQuestion;
+    }
+
+    // First question
+    setQuestion('What is the capital of Colombia?');
+});
+
+/*
+const questions = [
+    {
+      question: 'What is the Capital of Colombia?',
+      answers: [
+        { text: 'Medellin', correct: false },
+        { text: 'Cartagena', correct: false },
+        { text: 'Bogota', correct: true },
+        { text: 'Caracas', correct: false }
+      ]
+    },
+]
+*/
