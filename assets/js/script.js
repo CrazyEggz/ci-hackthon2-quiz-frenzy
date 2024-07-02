@@ -17,8 +17,7 @@ function eyeball(event) {
 
 /** After the user enters their name they are taken to the categories page */
 function goToCategoriesPage() {
-
-    const button = document.getElementById("name-button");
+    const button = document.getElementById("name-input-btn");
 
     function categoriesPageLink() {
         window.location.href = 'categories.html';
