@@ -14,24 +14,3 @@ function eyeball(event) {
         eye.style.transform = "rotate(" + rotation + "deg)";
     });
 }
-
-/** After the user enters their name they are taken to the categories page */
-function goToCategoriesPage() {
-    const button = document.getElementById("name-input-btn");
-
-    function categoriesPageLink() {
-        window.location.href = 'categories.html';
-    }
-
-    document.addEventListener("keydown", function(event) {
-        if (button && event.key === "Enter") {
-            categoriesPageLink();
-        }
-    });
-
-    if (button) {
-        button.addEventListener("click", categoriesPageLink);
-    }
-}
-
-goToCategoriesPage();
