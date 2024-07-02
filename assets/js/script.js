@@ -41,3 +41,23 @@ const questions = [
     },
 ]
 */
+
+let correctAnswerCount = 0;
+let incorrectAnswerCount = 0;
+/**
+ * Increment the correct answer count by 1
+ * everytime when a correct answer is selected
+ */
+function incrementCorrectAnswerCount() {
+    const correctAnswerCountEl = document.querySelector("#correct-answer-count > span");
+    correctAnswerCountEl.innerText = ++correctAnswerCount;
+}
+
+/**
+ * Increment the incorrect answer count by 1
+ * everytime when an incorrect answer is selected
+ */
+function incrementIncorrectAnswerCount() {
+    const incorrectAnswerCountEl = document.querySelector("#incorrect-answer-count > span");
+    incorrectAnswerCountEl.innerText = ++incorrectAnswerCount;
+}
