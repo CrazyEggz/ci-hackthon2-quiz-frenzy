@@ -5,7 +5,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: #fff9ef;
 }
 
 /* Landing Page */
@@ -25,12 +24,19 @@ h1 {
     font-family: "Balsamiq Sans", sans-serif;
     font-weight: 700;
     font-style: normal;
+    color: #434343;
+}
+
+.speech-bubble > p {
+    font-family: "Balsamiq Sans", sans-serif;
+    color: #434343;
+    margin: 10px;
 }
 
 .speech-bubble {
     width: 450px;
     height: 100px;
-    border: 2px solid black;
+    border: 3px solid #f65035;
     border-radius: 25px;
     text-align: center;
     font-size: 16px;
@@ -45,12 +51,25 @@ h1 {
     width: 0;
     height: 0;
     position: absolute;
-    border-top: 20px solid black;
-    border-left: 20px solid black;
+    border-top: 20px solid #f65035;
+    border-left: 20px solid #f65035;
     border-right: 20px solid transparent;
     border-bottom: 20px solid transparent;
     bottom: -40px;
     left: 100px;
+}
+
+.speech-bubble::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 20px solid #fff9ef;
+    border-left: 20px solid #fff9ef;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    bottom: -33px;
+    left: 103px;
 }
 
 .eye-container {
@@ -158,13 +177,6 @@ h1 {
 
     
 /* question page*/
-
-
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  font-family:  "Balsamiq Sans", sans-serif;
-}
 
 :root {
   --hue-neutral: 200;
