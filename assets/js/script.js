@@ -18,12 +18,21 @@ function eyeball(event) {
 /** After the user enters their name they are taken to the categories page */
 function goToCategoriesPage() {
 
+    const button = document.getElementById("name-button");
+
+    function categoriesPageLink() {
+        window.location.href = 'categories.html';
+    }
+
     document.addEventListener("keydown", function(event) {
-        const button = document.getElementById("name-button");
         if (button && event.key === "Enter") {
-            window.location.href = 'categories.html';
+            categoriesPageLink();
         }
     });
+
+    if (button) {
+        button.addEventListener("click", categoriesPageLink);
+    }
 }
 
 goToCategoriesPage();
