@@ -85,15 +85,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-     // Disable all answer buttons
-     function disableAnswerButtons() {
+    // Disable all answer buttons
+    function disableAnswerButtons() {
         for (let btn of answerButtons) {
             btn.disabled = true;
         }
     }
 
-    //Enable all answer buttons
-    async function enableAnswerButtons() {
+    // Enable all answer buttons
+    function enableAnswerButtons() {
         for (let btn of answerButtons) {
             btn.disabled = false;
         }
