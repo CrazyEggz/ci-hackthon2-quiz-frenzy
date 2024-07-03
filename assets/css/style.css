@@ -5,6 +5,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    background-color: #fff9ef;
 }
 
 /* Landing Page */
@@ -145,7 +146,7 @@ h1 {
 .category-box {
     min-width: 200px;
     height: 150px;
-    border: 2px solid #000;
+    border: 5px outset;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,7 +156,7 @@ h1 {
     padding: 0px;
 }
 
-#fun-facts {
+#cartoons {
     background-color: #7fbfa2;
 }
 
