@@ -137,6 +137,7 @@ h1 {
 #name-input-btn > i {
     font-size: xx-large;
     color: #3845ad;
+    background-color: transparent;
 }
 
 /* Category Select Page*/
