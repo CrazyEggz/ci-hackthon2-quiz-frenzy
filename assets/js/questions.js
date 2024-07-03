@@ -40,10 +40,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Variable to keep track of the current question index
     let currentQuestionIndex = 0;
     const answerButtons = document.querySelectorAll('#answer-buttons .btn');
+    const nextButton = document.getElementById("next-btn");
 
     // Function to set a new question and answers
     async function setQuestionAndAnswers(index) {
         const question = await getQuestion(index);
+
+        enableAnswerButtons();
+        nextButton.disabled = true;
 
         // slice duplicates the answers array so we don't modify the original array
         // use splice to insert the correct answer randomly
@@ -67,8 +71,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Increment the current question index
         currentQuestionIndex++;
 
-        enableAnswerButtons();
-
         for (let btn of answerButtons) {
             btn.classList.remove("correct", "incorrect");
         }
@@ -80,7 +82,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             await setQuestionAndAnswers(currentQuestionIndex - 1); // Display last question with answers
             document.getElementById('question').textContent = "You have completed the quiz!";
             disableAnswerButtons();
-            document.getElementById('next-btn').disabled = true;
         }
     }
 
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // Add event listener to the Next button
-    document.getElementById('next-btn').addEventListener('click', displayNextQuestion);
+    nextButton.addEventListener('click', displayNextQuestion);
 
     // Counter section
     let correctAnswerCount = 0;
@@ -128,6 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const correctAnswer = decodeURIComponent(currentQuestion.correct_answer);
 
             disableAnswerButtons();
+            nextButton.disabled = false;
 
             if (selectedAnswer === correctAnswer) {
                 incrementCorrectAnswerCount();
