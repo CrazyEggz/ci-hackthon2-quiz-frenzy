@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Increment the current question index
         currentQuestionIndex++;
 
-        enableAnswersBtn(); 
+        enableAnswerButtons();
 
         for (let btn of answerButtons) {
             btn.classList.remove("correct", "incorrect");
@@ -79,22 +79,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         } else {
             await setQuestionAndAnswers(currentQuestionIndex - 1); // Display last question with answers
             document.getElementById('question').textContent = "You have completed the quiz!";
-            document.querySelectorAll('#answer-buttons .btn').forEach(button => {
-                button.disabled = true;
-            });
+            disableAnswerButtons();
             document.getElementById('next-btn').disabled = true;
         }
     }
 
      // Disable all answer buttons
-     function disableAnswersBtn() {
+     function disableAnswerButtons() {
         for (let btn of answerButtons) {
             btn.disabled = true;
         }
     }
 
     //Enable all answer buttons
-    async function enableAnswersBtn() {
+    async function enableAnswerButtons() {
         for (let btn of answerButtons) {
             btn.disabled = false;
         }
@@ -129,19 +127,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             const selectedAnswer = selectedBtn.textContent;
             const correctAnswer = decodeURIComponent(currentQuestion.correct_answer);
 
+            disableAnswerButtons();
+
             if (selectedAnswer === correctAnswer) {
                 incrementCorrectAnswerCount();
                 selectedBtn.classList.add("correct");
-                disableAnswersBtn();
             } else {
+                incrementIncorrectAnswerCount();
+                selectedBtn.classList.add("incorrect");
+
                 for (let btn of answerButtons) {
                     if (btn.innerText === decodeURIComponent(currentQuestion.correct_answer)) {
                         btn.classList.add("correct");
                     }
                 }
-                selectedBtn.classList.add("incorrect");
-                incrementIncorrectAnswerCount();
-                disableAnswersBtn();
             }
         });
     });
