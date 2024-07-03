@@ -10,15 +10,4 @@ document.querySelectorAll('.category-box').forEach(function (button) {
     }
 })
 
-/**
- * Display the user's name on page
- */
-function displayUserName() {
-    const params = new URLSearchParams(window.location.search); 
-    const userName = params.get("name");
-    const userNameEl = document.getElementById("user-name");
-    userNameEl.innerText = userName;
-    console.log(userName);
-}
-
 displayUserName();

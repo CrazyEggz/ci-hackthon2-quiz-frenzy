@@ -36,33 +36,7 @@ async function getQuestion(questionNumber) {
     return questions[questionNumber];
 }
 
-function displayFinalResult(userName, score) {
-    const resultContainer = document.getElementById('result-container');
-    const questionContainer = document.getElementById('question-container');
-    questionContainer.style.display = 'none';
-
-    resultContainer.innerHTML = `
-        <h2>Congratulations, ${userName}!</h2>
-        <p>Your final score is: ${score}</p>
-        <button id="play-again-btn">Play Again</button>
-        <button id="categories-btn">Choose Another Category</button>
-    `;
-
-    document.getElementById('play-again-btn').addEventListener('click', playAgain);
-    document.getElementById('categories-btn').addEventListener('click', goToCategories);
-}
-
-function playAgain() {
-    currentQuestionIndex = 0;
-    score = 0;
-    document.getElementById('question-container').style.display = 'block';
-    document.getElementById('result-container').innerHTML = '';
-    showQuestion();
-}
-
-function goToCategories() {
-    window.location.href = 'categories.html';
-}
+// Questions display
 
 document.addEventListener('DOMContentLoaded', async () => {
     // Variable to keep track of the current question index
@@ -107,9 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (currentQuestionIndex < questions.length) {
             await setQuestionAndAnswers(currentQuestionIndex);
         } else {
-            await setQuestionAndAnswers(currentQuestionIndex - 1); // Display last question with answers
-            document.getElementById('question').textContent = "You have completed the quiz!";
-            disableAnswerButtons();
+            displayFinalResult(correctAnswerCount);
         }
     }
 
@@ -129,6 +101,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Add event listener to the Next button
     nextButton.addEventListener('click', displayNextQuestion);
+    document.getElementById('home-icon').addEventListener('click', goToCategories);
+
+    displayUserName();
 
     // Counter section
     let correctAnswerCount = 0;
@@ -174,4 +149,36 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     });
+
+    // Result display
+    function displayFinalResult(score) {
+        const userName = getParameter("name");
+
+        const resultContainer = document.getElementById('result-container');
+        const questionContainer = document.getElementById('question-container');
+
+        nextButton.style["display"] = "none";
+        questionContainer.style.display = 'none';
+
+        resultContainer.innerHTML = `
+            <h2>Congratulations, ${userName}!</h2>
+            <p>Your final score is: ${score}</p>
+            <button id="play-again-btn">Play Again</button>
+            <button id="categories-btn">Choose Another Category</button>
+        `;
+
+        document.getElementById('play-again-btn').addEventListener('click', playAgain);
+        document.getElementById('categories-btn').addEventListener('click', goToCategories);
+    }
+
+    function playAgain() {
+        window.location.reload();
+    }
+
+    function goToCategories() {
+        const userName = getParameter("name");
+        const params = new URLSearchParams();
+        params.set("name", userName);
+        window.location.href = 'categories.html?' + params.toString();
+    }
 });
