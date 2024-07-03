@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questions</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Frenzy</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <h1>Questions coming up</h1>
-    
-    <div class="container">
-        <div id="question-container">
-          <div id="question">Question</div>
-          <div id="answer-buttons" class="btn-grid">
-            <button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>
-            <button class="btn">Answer 3</button>
-            <button class="btn">Answer 4</button>
-          </div>
+  <h1>Questions coming up</h1>
+
+  <div class="container">
+    <div id="question-container">
+      <div id="game-bar-container">
+        <div id="home-icon" aria-hidden="true">
+          <i class="fa-solid fa-house-chimney"></i>
         </div>
-        <div class="controls">
-          <button id="start-btn" class="start-btn btn hide">Start</button>
-          <button id="next-btn" class="next-btn btn hide ">Next</button>
-          <button id="next-btn" class="next-btn btn">&rarr;</button>
+        <div id="correct-answer-count" aria-hidden="true">
+          <span>0</span>&nbsp;<i class="fa-regular fa-face-laugh-beam"></i>
+        </div>
+        <div id="incorrect-answer-count" aria-hidden="true">
+          <span>0</span>&nbsp;<i class="fa-regular fa-face-frown"></i>
+        </div>
+        <div id="current-question-num" aria-hidden="true">
+          <i class="fa-solid fa-hourglass-half"></i>
         </div>
       </div>
+      <div id="question">Question</div>
+      <div id="answer-buttons" class="btn-grid">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="start-btn" class="start-btn btn hide">Start</button>
+      <button id="next-btn" class="next-btn btn hide ">Next</button>
+      <button id="next-btn" class="next-btn btn">&rarr;</button>
+    </div>
+  </div>
 
-    <script src="assets/js/script.js"></script>
+  <script src="https://kit.fontawesome.com/6e7a88330f.js" crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>

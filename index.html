@@ -9,16 +9,16 @@
 <body>
     <h1>Quiz Frenzy</h1>
     <div class = "speech-bubble">
-        <p>Hello! Welcome to Quiz Frenzy! I'm XXX! Please enter your name then proceed to choose a category for your quiz quest!</p>
+        <p>Welcome to Quiz Frenzy! I'm your quiz mascot Ollie! Please enter your name then proceed to choose a category for your quiz quest!</p>
     </div>
     <div class="eye-container">
         <div class = "eye"></div>
         <div class = "eye"></div>
     </div>
-    <div class="name-input-container">
-        <input type="text" id="name-input" placeholder="Enter your name">
-        <i id="name-input-btn" class="fa-solid fa-circle-arrow-right"></i>
-    </div>
+    <form id="name-input-container" action="categories.html" autocomplete="off">
+        <input type="text" id="name-input" placeholder="Enter your name" name="name" required>
+        <button id="name-input-btn"><i class="fa-solid fa-circle-arrow-right"></i></button>
+    </form>
     
     <script src="https://kit.fontawesome.com/6e7a88330f.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>

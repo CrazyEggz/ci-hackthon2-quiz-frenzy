@@ -15,27 +15,6 @@ function eyeball(event) {
     });
 }
 
-/** After the user enters their name they are taken to the categories page */
-function goToCategoriesPage() {
-    const button = document.getElementById("name-input-btn");
-
-    function categoriesPageLink() {
-        window.location.href = 'categories.html';
-    }
-
-    document.addEventListener("keydown", function(event) {
-        if (button && event.key === "Enter") {
-            categoriesPageLink();
-        }
-    });
-
-    if (button) {
-        button.addEventListener("click", categoriesPageLink);
-    }
-}
-
-goToCategoriesPage();
-
 /** Question page structure */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // First question
     setQuestion('What is the capital of Colombia?');
 });
-
 
 /*
 const questions = [
@@ -64,3 +42,22 @@ const questions = [
 ]
 */
 
+let correctAnswerCount = 0;
+let incorrectAnswerCount = 0;
+/**
+ * Increment the correct answer count by 1
+ * everytime when a correct answer is selected
+ */
+function incrementCorrectAnswerCount() {
+    const correctAnswerCountEl = document.querySelector("#correct-answer-count > span");
+    correctAnswerCountEl.innerText = ++correctAnswerCount;
+}
+
+/**
+ * Increment the incorrect answer count by 1
+ * everytime when an incorrect answer is selected
+ */
+function incrementIncorrectAnswerCount() {
+    const incorrectAnswerCountEl = document.querySelector("#incorrect-answer-count > span");
+    incorrectAnswerCountEl.innerText = ++incorrectAnswerCount;
+}
