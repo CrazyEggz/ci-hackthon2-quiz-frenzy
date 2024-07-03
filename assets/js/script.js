@@ -19,16 +19,6 @@ function eyeball(event) {
 
 /** Question page structure */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Function to set a new question
-    function setQuestion(newQuestion) {
-        const questionElement = document.getElementById('question');
-        questionElement.textContent = newQuestion;
-    }
-
-    // First question
-    setQuestion('What is the capital of Colombia?');
-});
 
 /*
 const questions = [
@@ -44,22 +34,92 @@ const questions = [
 ]
 */
 
-let correctAnswerCount = 0;
-let incorrectAnswerCount = 0;
-/**
- * Increment the correct answer count by 1
- * everytime when a correct answer is selected
- */
-function incrementCorrectAnswerCount() {
-    const correctAnswerCountEl = document.querySelector("#correct-answer-count > span");
-    correctAnswerCountEl.innerText = ++correctAnswerCount;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // Array of temporary questions
+    const questions = [
+        'What is the capital of Colombia?',
+        'What is the capital of France?',
+        'What is 2 + 2?',
+        'What is the capital of Japan?',
+        'What is the largest planet in our solar system?'
+    ];
 
-/**
- * Increment the incorrect answer count by 1
- * everytime when an incorrect answer is selected
- */
-function incrementIncorrectAnswerCount() {
-    const incorrectAnswerCountEl = document.querySelector("#incorrect-answer-count > span");
-    incorrectAnswerCountEl.innerText = ++incorrectAnswerCount;
-}
+    // Array of temporary answers 
+    const answers = [
+        ['Bogotá', 'Paris', 'Berlin', 'Lisbon'],
+        ['Paris', 'London', 'Rome', 'Madrid'],
+        ['3', '4', '5', '6'],
+        ['Tokyo', 'Beijing', 'Seoul', 'Bangkok'],
+        ['Earth', 'Mars', 'Jupiter', 'Saturn']
+    ];
+
+    // Variable to keep track of the current question index
+    let currentQuestionIndex = 0;
+
+    // Function to set a new question and answers
+    function setQuestionAndAnswers(index) {
+        const questionElement = document.getElementById('question');
+        const answerButtons = document.querySelectorAll('#answer-buttons .btn');
+
+        questionElement.textContent = questions[index];
+        answerButtons.forEach((button, i) => {
+            button.textContent = answers[index][i];
+        });
+    }
+
+    // Display the first question and answers
+    setQuestionAndAnswers(currentQuestionIndex);
+
+    // Function to display the next question
+    function displayNextQuestion() {
+        // Increment the current question index
+        currentQuestionIndex++;
+
+        // Check if there are more questions left
+        if (currentQuestionIndex < questions.length) {
+            setQuestionAndAnswers(currentQuestionIndex);
+        } else {
+            setQuestionAndAnswers(currentQuestionIndex - 1); // Display last question with answers
+            document.getElementById('question').textContent = "You have completed the quiz!";
+            document.querySelectorAll('#answer-buttons .btn').forEach(button => {
+                button.disabled = true;
+            });
+            document.getElementById('next-btn').disabled = true;
+        }
+    }
+
+    // Add event listener to the Next button
+    document.getElementById('next-btn').addEventListener('click', displayNextQuestion);
+
+    // Counter section
+    let correctAnswerCount = 0;
+    let incorrectAnswerCount = 0;
+
+    // Increment the correct answer count by 1
+    function incrementCorrectAnswerCount() {
+        const correctAnswerCountEl = document.querySelector("#correct-answer-count > span");
+        correctAnswerCountEl.innerText = ++correctAnswerCount;
+    }
+
+    // Increment the incorrect answer count by 1
+    function incrementIncorrectAnswerCount() {
+        const incorrectAnswerCountEl = document.querySelector("#incorrect-answer-count > span");
+        incorrectAnswerCountEl.innerText = ++incorrectAnswerCount;
+    }
+
+    // Add event listeners to answer buttons
+    const answerButtons = document.querySelectorAll('#answer-buttons .btn');
+    answerButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Placeholder: Replace with actual answer checking logic
+            const selectedAnswer = e.target.textContent;
+            const correctAnswer = answers[currentQuestionIndex].find(answer => answer === selectedAnswer); // Simplified check
+
+            if (selectedAnswer === correctAnswer) {
+                incrementCorrectAnswerCount();
+            } else {
+                incrementIncorrectAnswerCount();
+            }
+        });
+    });
+});
