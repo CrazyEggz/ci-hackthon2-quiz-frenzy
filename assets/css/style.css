@@ -182,7 +182,7 @@ h1 {
 
 :root {
   --hue-neutral: 200;
-  --hue-wrong: 0;
+  --hue-incorrect: 0;
   --hue-correct: 145;
 }
 
@@ -222,8 +222,8 @@ h1 {
   color: black;
 }
 
-.btn.wrong {
-  --hue: var(--hue-wrong);
+.btn.incorrect {
+  --hue: var(--hue-incorrect);
 }
 
 .start-btn, .next-btn {

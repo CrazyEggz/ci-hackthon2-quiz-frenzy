@@ -70,12 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         enableAnswersBtn(); 
 
         for (let btn of answerButtons) {
-            if (btn.classList.contains("correct")) {
-                btn.classList.remove("correct");
-            }
-            if (btn.classList.contains("wrong")) {
-                btn.classList.remove("wrong");
-            }
+            btn.classList.remove("correct", "incorrect");
         }
 
         // Check if there are more questions left
@@ -144,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         btn.classList.add("correct");
                     }
                 }
-                selectedBtn.classList.add("wrong");
+                selectedBtn.classList.add("incorrect");
                 incrementIncorrectAnswerCount();
                 disableAnswersBtn();
             }
