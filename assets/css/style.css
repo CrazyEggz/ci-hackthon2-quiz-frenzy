@@ -5,7 +5,8 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: #fff9ef;
+    font-family: inherit;
+    color: inherit;
 }
 
 /* Landing Page */
@@ -16,21 +17,19 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: #fff9ef;
+    font-family: "Balsamiq Sans", sans-serif;
     text-align: center;
+    color: #434343;
 }
 
 h1 {
     font-size: 4rem;
     margin: 30px;
-    font-family: "Balsamiq Sans", sans-serif;
     font-weight: 700;
     font-style: normal;
-    color: #434343;
 }
 
 .speech-bubble > p {
-    font-family: "Balsamiq Sans", sans-serif;
-    color: #434343;
     margin: 10px;
 }
 
@@ -160,6 +159,7 @@ h1 {
     font-weight: bold;
     margin: 50px;
     padding: 0px;
+    color: black;
 }
 
 #cartoons {
@@ -186,19 +186,23 @@ h1 {
 /* question page*/
 
 :root {
-  --hue-neutral: 200;
-  --hue-incorrect: 0;
-  --hue-correct: 145;
+  --color-neutral: #3845AD;
+  --color-incorrect: #F65035;
+  --color-correct: #7FBFA2;
 }
 
+
+#question {
+    font-size: 18px;
+}
 
 .container {
   width: 800px;
   max-width: 80%;
-  background-color: white;
+  background-color: #f9cdcc;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 0 10px 2px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
 }
 
 .btn-grid {
@@ -209,26 +213,26 @@ h1 {
 }
 
 .btn {
-  --hue: var(--hue-neutral);
-  border: 1px solid hsl(var(--hue), 100%, 30%);
-  background-color: hsl(var(--hue), 100%, 50%);
+  border: 1px solid #434343;
+  background-color: var(--color-neutral);
   border-radius: 5px;
   padding: 5px 10px;
   color: white;
   outline: none;
+  font-size: 16px;
 }
 
 .btn:hover {
-  border-color: black;
+  border-color: #434343;
 }
 
 .btn.correct {
-  --hue: var(--hue-correct);
-  color: black;
+  background-color: var(--color-correct);
+  color: inherit;
 }
 
 .btn.incorrect {
-  --hue: var(--hue-incorrect);
+  background-color: var(--color-incorrect);
 }
 
 .start-btn, .next-btn {
@@ -250,6 +254,12 @@ h1 {
 #game-bar-container {
     display: flex;
     justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+#game-bar-container i {
+    font-size: large;
 }
 
 #correct-answer-count {
@@ -264,7 +274,11 @@ h1 {
     margin: 0px 20px;
 }
 
-/* Media queries */
+#score-container {
+    margin: 20px;
+}
+
+/* Media queries  */
 
 @media only screen and (max-width: 900px) {
     .speech-bubble {

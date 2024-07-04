@@ -162,9 +162,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         resultContainer.innerHTML = `
             <h2>Congratulations, ${userName}!</h2>
-            <p>Your final score is: ${score}</p>
-            <button id="play-again-btn">Play Again</button>
-            <button id="categories-btn">Choose Another Category</button>
+            <div id="score-container"><p>Your final score is: ${score}</p></div>
+            <button id="play-again-btn" class="btn">Play Again</button>
+            <button id="categories-btn" class="btn">Choose Another Category</button>
         `;
 
         document.getElementById('play-again-btn').addEventListener('click', playAgain);
