@@ -1,131 +1,70 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Quiz Frenzy
 
-Welcome Dan Feng,
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Planning and Design](#planning-and-design)
+3. [Features](#features)
+4. [Technologies Used](#technologies-used)
+5. [Instructions](#instructions)
+6. [Testing](#testing)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Acknowledgments](#acknowledgments)
+10. [Contact](#contact)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Introduction
+Welcome to Quiz Frenzy! This interactive quiz game offers an engaging way to test your knowledge across four exciting categories: Sports, Films, Cartoons & Animations, and Science & Nature. Challenge yourself and see how high you can score!
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## Planning & Design
+Our development process was meticulously planned and executed to deliver a seamless user experience:
 
-## Gitpod Reminders
+1. **Brainstorming Ideas**: We initiated the project with brainstorming sessions to determine the core features and overall concept of the game.
+2. **Research**: Comprehensive research was conducted to understand user preferences and best practices in quiz game design.
+3. **Prioritizing User Stories**: We prioritized user stories to focus on the most critical aspects of the game, ensuring a smooth and enjoyable experience.
+4. **Wireframe Design**: The game’s layout and design were crafted using wireframe software, allowing us to visualize and refine the user interface before development.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Features
+Quiz Frenzy boasts a range of features designed to enhance your gaming experience:
 
-`python3 -m http.server`
+- **Interactive Landing Page**: The landing page features an engaging eyeball interaction to capture users' attention.
+- **Category Selection**: Players can choose from four categories: Sports, Films, Cartoons & Animations, and Science & Nature.
+- **Real-time Score Counter**: Track your progress with a live score counter.
+- **Home Button**: Easily navigate back to the home page at any time.
+- **API-Generated Questions**: Questions are dynamically generated through an API, ensuring a diverse and up-to-date quiz each time.
+- **Player Personalization**: Enter your name to personalize your gaming experience and track your scores.
 
-A blue button should appear to click: _Make Public_,
+## Technologies Used
+- **Balsamiq**: Utilized for creating wireframes and visualizing the game’s user interface.
+- **KANBAN**: Employed for project management, organizing and prioritizing tasks.
+- **GitHub**: Used for version control and collaboration.
+- **W3C Validator**: Ensured the HTML and CSS code meets web standards.
+- **HTML/CSS**: Core markup and styling languages for creating the game’s structure and design.
+- **Bootstrap 5**: Leveraged for responsive design and styling.
 
-Another blue button should appear to click: _Open Browser_.
+## Instructions
+To play Quiz Frenzy, follow these steps:
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+1. Visit this link: `<your link>`
+2. Enter your name.
+3. Select a category.
+4. Choose the correct answer from the four options provided.
+5. Each quiz consists of ten questions per category, randomly selected to ensure a unique experience each time.
+6. Your score will be updated in real-time as you play.
+7. Use the home button to restart the game at any point.
+8. Upon completing the game, you will receive a congratulatory message.
 
-A blue button should appear to click: _Make Public_,
+## Testing
+To ensure the functionality and reliability of Quiz Frenzy, we conducted comprehensive testing, including:
 
-Another blue button should appear to click: _Open Browser_.
+1. **Feature Testing with Google Chrome DevTools**: Utilized Google Chrome DevTools to inspect and debug features, ensuring optimal functionality and performance.
+2. **Cross-Device Testing**: Tested the game on various devices (desktops, tablets, and mobile phones) to ensure a responsive and consistent experience.
+3. **Browser Testing**: Verified compatibility and performance across multiple browsers, including Chrome, Firefox, Safari, and Edge.
+4. **User Experience Testing**: Conducted thorough user experience testing to identify and resolve any usability issues, ensuring a smooth and enjoyable gameplay experience.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Contributing
+We welcome contributions to Quiz Frenzy! If you would like to contribute, please follow these steps:
 
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
-
-### Connecting your Mongo database
-
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**June 18, 2024,** Add Mongo back into template
-
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+1. **Fork the Repository**: Click the "Fork" button at the top right of the repository page.
+2. **Create a Branch**:
+   ```bash
+   git checkout -b feature-branch
